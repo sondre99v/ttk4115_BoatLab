@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.18"
+    ComputedModelVersion    "1.17"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -68,8 +68,8 @@ Model {
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
 	Extents			[1058.0, 896.0]
-	ZoomFactor		[1.0]
-	Offset			[-31.126190476190459, -77.685714285714425]
+	ZoomFactor		[1.25]
+	Offset			[92.7238095238095, -19.485714285714323]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -101,11 +101,11 @@ Model {
   Creator		  "markh"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "sondrna"
+  LastModifiedBy	  "markh"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Oct 26 10:14:23 2017"
-  RTWModifiedTimeStamp	  430912340
-  ModelVersionFormat	  "1.%<AutoIncrement:18>"
+  LastModifiedDate	  "Mon Nov 10 11:55:11 2014"
+  RTWModifiedTimeStamp	  430912284
+  ModelVersionFormat	  "1.%<AutoIncrement:17>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -431,7 +431,7 @@ Model {
 	  SimStateInterfaceChecksumMismatchMsg "warning"
 	  SimStateOlderReleaseMsg "error"
 	  InitInArrayFormatMsg	  "warning"
-	  StrictBusMsg		  "ErrorLevel1"
+	  StrictBusMsg		  "None"
 	  BusNameAdapt		  "WarnAndRepair"
 	  NonBusSignalsTreatedAsBus "none"
 	  SymbolicDimMinMaxWarning "warning"
@@ -1064,17 +1064,13 @@ Model {
       Floating		      off
     }
     Block {
-      BlockType		      Sin
-      SineType		      "Time based"
-      TimeSource	      "Use simulation time"
-      Amplitude		      "1"
-      Bias		      "0"
-      Frequency		      "1"
-      Phase		      "0"
-      Samples		      "10"
-      Offset		      "0"
+      BlockType		      Step
+      Time		      "1"
+      Before		      "0"
+      After		      "1"
       SampleTime	      "-1"
       VectorParams1D	      on
+      ZeroCross		      on
     }
     Block {
       BlockType		      SubSystem
@@ -1140,7 +1136,7 @@ Model {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "100"
+    ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "33"
     Block {
@@ -1696,6 +1692,20 @@ Model {
     }
     Block {
       BlockType		      Reference
+      Name		      "Degrees to\nRadians"
+      SID		      "33"
+      Ports		      [1, 1]
+      Position		      [240, 195, 270, 225]
+      ZOrder		      3
+      LibraryVersion	      "1.59"
+      SourceBlock	      "simulink_extras/Transformations/Degrees to\nRadians"
+      SourceType	      "DegreesToRadians"
+      SourceProductName	      "Simulink"
+      SourceProductBaseCode   "SL"
+      ContentPreviewEnabled   off
+    }
+    Block {
+      BlockType		      Reference
       Name		      "North-East"
       SID		      "29"
       Ports		      [2]
@@ -1724,7 +1734,7 @@ Model {
       "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
       "ources','WiredSimulink',true,'DataLoggingSaveFormat','StructureWithTime','DataLoggingDecimation','1','DataLoggin"
       "gDecimateData',true),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal"
-      "','-6.37149','MaxYLimReal','26.55138','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','26.55138','LegendVisi"
+      "','-2.55649','MaxYLimReal','23.00844','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','23.00844','LegendVisi"
       "bility','Off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803"
       "922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.6235294117647"
       "06 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.7176470588235"
@@ -1743,17 +1753,16 @@ Model {
       "0980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'"
       "LineNames',{{[]}},'ShowContent',true,'Placement',1),'DisplayLayoutDimensions',[2 1]),extmgr.Configuration('Tools"
       "','Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','2017a')),'Version','2017a'"
-      ",'Location',[149 185 1054 748])"
+      ",'Location',[149 185 1054 748],'VisibleAtModelOpen','on')"
       NumInputPorts	      "2"
     }
     Block {
-      BlockType		      Sin
-      Name		      "Sine Wave"
-      SID		      "31"
-      Ports		      [0, 1]
-      Position		      [245, 195, 275, 225]
-      ZOrder		      1
-      Frequency		      "0.005"
+      BlockType		      Step
+      Name		      "Step"
+      SID		      "32"
+      Position		      [180, 195, 210, 225]
+      ZOrder		      2
+      Time		      "3000"
       SampleTime	      "0"
     }
     Line {
@@ -1779,19 +1788,26 @@ Model {
       DstPort		      1
     }
     Line {
-      ZOrder		      4
-      SrcBlock		      "Sine Wave"
+      ZOrder		      8
+      SrcBlock		      "Degrees to\nRadians"
       SrcPort		      1
-      Points		      [17, 0]
+      DstBlock		      "Cargo ship"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      7
+      SrcBlock		      "Step"
+      SrcPort		      1
+      Points		      [10, 0]
       Branch {
-	ZOrder			6
+	ZOrder			10
 	Points			[0, -60]
 	DstBlock		"Scope"
 	DstPort			2
       }
       Branch {
-	ZOrder			5
-	DstBlock		"Cargo ship"
+	ZOrder			9
+	DstBlock		"Degrees to\nRadians"
 	DstPort			1
       }
     }
