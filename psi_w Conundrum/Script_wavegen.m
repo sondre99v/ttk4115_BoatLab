@@ -1,8 +1,8 @@
 clear;
 
-K_w_model = 0.0181 * 2^4 / 0.8913 * 1.3;
-lambda_model = 0.1;
-w0_model = 0.7823;
+K_w = 0.0181 * 2^4 / 0.8913 * 1.3;
+lambda = 0.1;
+w0 = 0.7823;
 
 sim('psi_w_new_model.slx');
 
