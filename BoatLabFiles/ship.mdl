@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.18"
+    ComputedModelVersion    "1.19"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -103,9 +103,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sondrna"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Oct 26 10:14:23 2017"
-  RTWModifiedTimeStamp	  430912340
-  ModelVersionFormat	  "1.%<AutoIncrement:18>"
+  LastModifiedDate	  "Thu Nov 02 09:34:59 2017"
+  RTWModifiedTimeStamp	  431516096
+  ModelVersionFormat	  "1.%<AutoIncrement:19>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1751,7 +1751,7 @@ Model {
       Name		      "Sine Wave"
       SID		      "31"
       Ports		      [0, 1]
-      Position		      [245, 195, 275, 225]
+      Position		      [205, 195, 235, 225]
       ZOrder		      1
       Frequency		      "0.005"
       SampleTime	      "0"
@@ -1782,7 +1782,7 @@ Model {
       ZOrder		      4
       SrcBlock		      "Sine Wave"
       SrcPort		      1
-      Points		      [17, 0]
+      Points		      [57, 0]
       Branch {
 	ZOrder			6
 	Points			[0, -60]
