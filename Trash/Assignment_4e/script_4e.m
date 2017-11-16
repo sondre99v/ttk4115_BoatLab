@@ -1,15 +1,12 @@
 clear;
 close all;
 
-% Define boat parameters
-
+% Model constants
+T = 72.4637;
+K = 0.1561;
 w0 = 0.7823;
-lambda = 0.4465;
-Kw = 0.0269;
-
-% Nomoto constants
-K = 0.1560;
-T = 72.47; % seconds
+lambda = 0.0855;
+Kw = 0.0052;
 
 
 % Matrices for the state space equation with all disturbances

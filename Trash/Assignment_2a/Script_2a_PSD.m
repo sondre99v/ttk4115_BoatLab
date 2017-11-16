@@ -1,15 +1,16 @@
 clear;
 
+
 K_w_model = 0.0181 * 2^4 / 0.8913 * 1.3;
 lambda_model = 0.1;
 w0_model = 0.7823;
 
-sim('psi_w_new_model.slx');
+%sim('psi_w_new_model.slx');
 
 
 clear;
 
-load psi_w_new_time.mat;
+load wave.mat;
 sampl_freq = 10; % Hz
 window_size = 4096;
 TWOPI = 2 * pi;
