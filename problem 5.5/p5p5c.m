@@ -58,13 +58,13 @@ loan_exponent = [...
 
 loan_m = expm(loan_exponent * Ts);
 Qd = loan_m(1:5, 6:10) * loan_m(1:5, 1:5)';
-
+Rd = R / Ts;
 
 % Setup initial conditions for the kalman filter
 data.A = Ad;
 data.B = Bd;
 data.C = C;
-data.R = R / Ts;
+data.R = Rd;
 data.Q = Qd;
 data.E = Ed;
 
